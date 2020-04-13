@@ -8,8 +8,10 @@ using Persistence;
 
 namespace API
 {
+
     public class Startup
     {
+        readonly string MyCorsPolicy = "_MyCorsPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +26,13 @@ namespace API
             {
                 opt.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy(name: MyCorsPolicy, policy =>
+                {
+                    policy.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             services.AddControllers();
         }
 
@@ -36,11 +45,8 @@ namespace API
             }
 
             // app.UseHttpsRedirection();
-
+            app.UseCors(MyCorsPolicy);
             app.UseRouting();
-
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -8,7 +9,7 @@ using Persistence;
 namespace API.Controllers
 {
     [ApiController]
-    [Route("[api/[controller]")]
+    [Route("apiValues")]
     public class ValuesController : ControllerBase
     {
         private readonly DataContext _context;
