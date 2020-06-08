@@ -2,6 +2,7 @@
   <dictionary name="Drew">
     <words>
       <w>axios</w>
+      <w>mobx</w>
     </words>
   </dictionary>
 </component>
