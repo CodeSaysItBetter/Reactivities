@@ -1,7 +1,5 @@
-import React, {Fragment, useContext, useEffect} from 'react';
+import React, {Fragment} from 'react';
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
-import LoadingComponent from "./LoadingComponent";
-import ActivityStore from "../stores/activityStore";
 import {observer} from "mobx-react-lite";
 import {Route, RouteComponentProps, withRouter} from 'react-router-dom';
 import HomePageComponent from "../../features/home/HomePage";
