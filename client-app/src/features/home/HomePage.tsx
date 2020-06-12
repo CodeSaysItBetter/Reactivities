@@ -11,7 +11,7 @@ const HomePageComponent = () => {
                     Reactivities
                 </Header>
 
-                <Header as='h2' inverted content='Welcome to Reactivities'/>
+                <Header as='h2' inverted content='Welcome to Reactaivities'/>
                 <Button as={Link} to='/activities' size='huge' inverted>Take me to the activities!</Button>
             </Container>
         </Segment>
